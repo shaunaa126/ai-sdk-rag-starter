@@ -7,5 +7,6 @@ export default {
   out: "./lib/db/migrations",
   dbCredentials: {
     url: env.DATABASE_URL,
-  }
+  },
+  tablesFilter: ['!pg_stat_*'], // Exclude tables starting with pg_stat_
 } satisfies Config;
