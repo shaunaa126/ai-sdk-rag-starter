@@ -13,7 +13,9 @@
     "db:pull": "drizzle-kit introspect",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:check": "drizzle-kit check"
+    "db:check": "drizzle-kit check",
+    "pq:manifest": "ts-node lib/graphql/manifest.ts",
+    "pq:publish": "ts-node lib/graphql/publish-pqs.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.0.2",
@@ -27,6 +29,7 @@
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.31.2",
     "drizzle-zod": "^0.5.1",
+    "graphql": "^16.9.0",
     "lucide-react": "^0.396.0",
     "nanoid": "^5.0.7",
     "next": "14.2.4",
@@ -40,6 +43,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@apollo/generate-persisted-query-manifest": "^1.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -50,7 +54,9 @@
     "pg": "^8.12.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "tsx": "^4.15.7",
-    "typescript": "^5"
+    "typescript": "^5",
+    "yaml": "^2.5.0"
   }
 }

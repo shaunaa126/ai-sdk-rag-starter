@@ -1,0 +1,10 @@
+# Retrieves the details of a customers reward profile by its ID, including the aaId, miles balance, miles remaining, next tier and reward tier
+query GetRewards($rewardsId: ID!) {
+  rewards(id: $rewardsId) {
+    aaId
+    milesBalance
+    milesRemaining
+    nextTier
+    rewardTier
+  }
+}
