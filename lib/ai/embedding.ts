@@ -81,8 +81,13 @@ export const persistedQueryTool = async ({ id, routerListenHost, variables }: { 
   } from ${routerListenHost}`);
 
   const body: {
-    extensions: Record<string, any>;
-    variables?: Record<string, any>;
+    extensions: {
+      persistedQuery: {
+        version: number;
+        sha256Hash: string;
+      };
+    };
+    variables?: string;
   } = {
     extensions: {
       persistedQuery: {
@@ -106,16 +111,16 @@ export const persistedQueryTool = async ({ id, routerListenHost, variables }: { 
   }
 
   const response = await fetch(`http://${routerListenHost}`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer <token>',
-      'apollographql-client-name': 'apimgmt'
+      "Content-Type": "application/json",
+      "Authorization": "Bearer <token>",
+      "apollographql-client-name": "apimgmt"
     },
     body: JSON.stringify(body),
   });
 
-  console.log("Request body", JSON.stringify(body));
+  console.log("Request body:", JSON.stringify(body));
   const jsonResponse = await response.json();
   console.log("Response from fetch:", JSON.stringify(jsonResponse));
 
