@@ -1,0 +1,19 @@
+supergraph:
+  listen: apollo-graphql-router-test.cloud.aa.com
+  #listen: 127.0.0.1:4000
+
+headers:
+  all:
+    request:
+      - propagate:
+          matching: .*
+preview_connectors:
+  subgraphs:
+    connector:
+      $config:
+        stripe: ${env.STRIPE_API_KEY}
+
+persisted_queries:
+  enabled: true
+apq:
+  enabled: false

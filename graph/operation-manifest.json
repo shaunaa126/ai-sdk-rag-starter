@@ -1,0 +1,18 @@
+{
+  "format": "apollo-persisted-query-manifest",
+  "version": 1,
+  "operations": [
+    {
+      "id": "GetFlightDetails",
+      "name": "GetFlightDetails",
+      "type": "query",
+      "body": "# Retrieves the details of a flight by its ID, including the departure airport code, arrival aiport code, and available seat details\nquery GetFlightDetails($flightId: ID!) {\n  flight(id: $flightId) {\n    id\n    departureAirportCode\n    arrivalAirportCode\n    seats {\n      available\n      seatNumber\n      id\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "GetRewards",
+      "name": "GetRewards",
+      "type": "query",
+      "body": "# Retrieves the details of a customers reward profile by its ID, including the aaId, miles balance, miles remaining, next tier and reward tier\nquery GetRewards($rewardsId: ID!) {\n  rewards(id: $rewardsId) {\n    aaId\n    milesBalance\n    milesRemaining\n    nextTier\n    rewardTier\n    __typename\n  }\n}"
+    }
+  ]
+}

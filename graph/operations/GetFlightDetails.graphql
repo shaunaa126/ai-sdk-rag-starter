@@ -1,0 +1,13 @@
+# Retrieves the details of a flight by its ID, including the departure airport code, arrival aiport code, and available seat details
+query GetFlightDetails($flightId: ID!) {
+  flight(id: $flightId) {
+    id
+    departureAirportCode
+    arrivalAirportCode
+    seats {
+      available
+      seatNumber
+      id
+    }
+  }
+}
